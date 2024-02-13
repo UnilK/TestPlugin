@@ -8,7 +8,7 @@ map ml :silent !dev/run<CR><C-l>
 map <C-h> G/include<CR> :noh<CR> w w gf
 
 "included jump paths
-set path=Source
+set path=Source,~/JUCE/modules,JuceLibraryCode
 
 "close tabs by holding down q
 nmap qqq :qa<CR>
