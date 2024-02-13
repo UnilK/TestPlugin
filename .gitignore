@@ -1,0 +1,6 @@
+dev/.undo
+*.swp
+**/Builds
+**/JuceLibraryCode
+**/.DS_Store
+
