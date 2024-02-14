@@ -1,0 +1,3 @@
+#!/bin/bash
+
+~/JUCE/extras/AudioPluginHost/Builds/LinuxMakefile/build/AudioPluginHost
