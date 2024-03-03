@@ -1,0 +1,5 @@
+#!/bin/bash
+
+kill -9 $(pgrep TestPlugin) > /dev/null 2>&1
+./Builds/LinuxMakefile/build/TestPlugin
+

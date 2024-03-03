@@ -32,5 +32,7 @@ private:
     juce::TextButton testbtn1 { "Test1" };
     juce::TextButton testbtn2 { "Test2" };
 
+    void updateToggleState(juce::Button *btn, juce::String name);
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TestPluginAudioProcessorEditor)
 };
