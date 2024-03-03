@@ -24,8 +24,8 @@ TestPluginAudioProcessorEditor::TestPluginAudioProcessorEditor (TestPluginAudioP
     testbtn1.onClick = [this]{ updateToggleState(&testbtn1, "Test 1"); };
     testbtn2.onClick = [this]{ updateToggleState(&testbtn2, "Test 2"); };
 
-    testbtn1.setClickingTogglesState (true);
-    testbtn2.setClickingTogglesState (true);
+    testbtn1.setClickingTogglesState(true);
+    testbtn2.setClickingTogglesState(true);
 
     addAndMakeVisible(&testbtn1);
     addAndMakeVisible(&testbtn2);
@@ -49,7 +49,6 @@ void TestPluginAudioProcessorEditor::updateToggleState(juce::Button *btn, juce::
 
 void TestPluginAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
 
     g.setColour (juce::Colours::white);
@@ -59,9 +58,20 @@ void TestPluginAudioProcessorEditor::paint (juce::Graphics& g)
 
 void TestPluginAudioProcessorEditor::resized()
 {
-    // This is generally where you'll want to lay out the positions of any
-    // subcomponents in your editor..
+    juce::FlexBox fb0, fb1, fb2;
 
-    testbtn1.setBounds (40, 40, 200, 40);
-    testbtn2.setBounds (40, 100, 200, 40);
+    using juce::FlexBox;
+    using juce::FlexItem;
+
+    fb0.flexDirection = FlexBox::Direction::column;
+    fb0.items.add(FlexItem(fb1).withMinHeight(50).withMaxHeight(50).withFlex(1, 1, 0));
+    fb0.items.add(FlexItem(fb2).withFlex(1, 1, 0));
+
+    const auto buttons = {&testbtn1, &testbtn2};
+
+    for (auto* b : buttons){
+        fb1.items.add(juce::FlexItem(*b).withFlex(1, 1, 0));
+    }
+
+    fb0.performLayout(getLocalBounds());
 }
