@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include "Graph.h"
 
 //==============================================================================
 /**
@@ -31,6 +32,7 @@ private:
 
     juce::TextButton testbtn1 { "Test1" };
     juce::TextButton testbtn2 { "Test2" };
+    Graph graph;
 
     void updateToggleState(juce::Button *btn, juce::String name);
 

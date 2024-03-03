@@ -8,6 +8,7 @@
 
 #include "PluginEditor.h"
 #include "PluginProcessor.h"
+#include "Palette.h"
 
 //==============================================================================
 TestPluginAudioProcessorEditor::TestPluginAudioProcessorEditor (TestPluginAudioProcessor& p)
@@ -29,6 +30,7 @@ TestPluginAudioProcessorEditor::TestPluginAudioProcessorEditor (TestPluginAudioP
 
     addAndMakeVisible(&testbtn1);
     addAndMakeVisible(&testbtn2);
+    addAndMakeVisible(&graph);
 }
 
 TestPluginAudioProcessorEditor::~TestPluginAudioProcessorEditor()
@@ -49,9 +51,9 @@ void TestPluginAudioProcessorEditor::updateToggleState(juce::Button *btn, juce::
 
 void TestPluginAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
+    g.fillAll(palette.bg);
 
-    g.setColour (juce::Colours::white);
+    g.setColour (palette.red);
     g.setFont (15.0f);
     g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
 }
@@ -70,8 +72,10 @@ void TestPluginAudioProcessorEditor::resized()
     const auto buttons = {&testbtn1, &testbtn2};
 
     for (auto* b : buttons){
-        fb1.items.add(juce::FlexItem(*b).withFlex(1, 1, 0));
+        fb1.items.add(FlexItem(*b).withFlex(1, 1, 0));
     }
+
+    fb2.items.add(FlexItem(graph).withFlex(1, 1, 0));
 
     fb0.performLayout(getLocalBounds());
 }

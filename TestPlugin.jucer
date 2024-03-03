@@ -12,6 +12,10 @@
       <FILE id="aC2RSy" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="elXSsJ" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="nEQFiK" name="Graph.cpp" compile="1" resource="0" file="Source/Graph.cpp"/>
+      <FILE id="PJb4sd" name="Graph.h" compile="0" resource="0" file="Source/Graph.h"/>
+      <FILE id="QLK3Yj" name="Palette.cpp" compile="1" resource="0" file="Source/Palette.cpp"/>
+      <FILE id="wz244E" name="Palette.h" compile="0" resource="0" file="Source/Palette.h"/>
     </GROUP>
   </MAINGROUP>
   <MODULES>
