@@ -6,8 +6,8 @@
   ==============================================================================
 */
 
-#include "PluginProcessor.h"
 #include "PluginEditor.h"
+#include "PluginProcessor.h"
 
 //==============================================================================
 TestPluginAudioProcessorEditor::TestPluginAudioProcessorEditor (TestPluginAudioProcessor& p)
@@ -15,7 +15,14 @@ TestPluginAudioProcessorEditor::TestPluginAudioProcessorEditor (TestPluginAudioP
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (600, 600);
+    setSize (1200, 800);
+    setResizable(true, true);
+
+    testbtn1.setRadioGroupId(123);
+    testbtn2.setRadioGroupId(123);
+
+    addAndMakeVisible(&testbtn1);
+    addAndMakeVisible(&testbtn2);
 }
 
 TestPluginAudioProcessorEditor::~TestPluginAudioProcessorEditor()
@@ -37,4 +44,7 @@ void TestPluginAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
+
+    testbtn1.setBounds (40, 40, 200, 40);
+    testbtn2.setBounds (40, 100, 200, 40);
 }

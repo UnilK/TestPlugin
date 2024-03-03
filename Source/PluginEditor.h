@@ -29,5 +29,8 @@ private:
     // access the processor object that created it.
     TestPluginAudioProcessor& audioProcessor;
 
+    juce::TextButton testbtn1 { "Test1" };
+    juce::TextButton testbtn2 { "Test2" };
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (TestPluginAudioProcessorEditor)
 };
