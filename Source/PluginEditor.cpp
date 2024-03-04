@@ -17,6 +17,7 @@ TestPluginAudioProcessorEditor::TestPluginAudioProcessorEditor (TestPluginAudioP
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (1200, 800);
+    setResizeLimits(100, 100, 123123, 123123);
     setResizable(true, true);
 
     testbtn1.setRadioGroupId(123);
